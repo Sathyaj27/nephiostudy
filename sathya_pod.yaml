@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+    run: sathya
+ name: sathyapod
+ namespace: default
+spec:
+ containers:
+ - image: nginx
+   imagePullPolicy: Always
+   name: sathyapod
+   resources: {}
+   ports:
+      - containerPort: 80
+        name: sathyapod
+

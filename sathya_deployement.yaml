@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sathya-deployment
+  namespace: default
+  labels:
+    run: sathya
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        run: sathya
+  template:
+    metadata:
+      labels:
+        run: sathya
+      name: sathyapod
+      namespace: default
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: sathyapod
+        resources: {}
+
